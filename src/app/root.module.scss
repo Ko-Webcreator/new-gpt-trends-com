@@ -1,12 +1,23 @@
 :root {
-  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", Meiryo,
+  font-family: Arial, -apple-system, BlinkMacSystemFont, "Hiragino Sans", Meiryo,
     sans-serif;
 
   width: 100%;
   height: 100%;
 
+  --color-primary: #f2efe6;
+  --color-secondary-black: rgba(0, 0, 0, 0.85);
+  --color-black: #000;
+  --color-white: #fff;
+  --color-red: #cb3030;
+  --color-blue: #0099ff;
+  --color-light-gray: #9e9e9e;
+  --color-gray: #2d2d2d;
+
+  color-scheme: dark;
+  color: inherit;
+
   body {
-    background: var(--color-primary);
     width: 100%;
     height: 100%;
     overflow-x: hidden;
@@ -17,6 +28,13 @@
     button {
       border: none;
       text-decoration: none;
+      background: none;
+      padding: 0;
+      color: var(--color-black);
+
+      &:visited {
+        color: var(--color-black);
+      }
 
       &:hover {
         transition: 0.5s;

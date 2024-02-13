@@ -10,13 +10,13 @@
   --color-black: #000;
   --color-white: #fff;
   --color-red: #cb3030;
+  --color-purple: #7a5fff;
   --color-blue: #0099ff;
   --color-light-gray: #9e9e9e;
   --color-gray: #2d2d2d;
 
   color-scheme: dark;
   color: inherit;
-
   body {
     width: 100%;
     height: 100%;
@@ -31,6 +31,7 @@
       background: none;
       padding: 0;
       color: var(--color-black);
+      margin: 0;
 
       &:visited {
         color: var(--color-black);

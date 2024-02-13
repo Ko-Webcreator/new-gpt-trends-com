@@ -1,5 +1,6 @@
 import { Viewport } from "next";
 import "@/app/globals.scss";
+import Header from "@/components/page/Header";
 
 export const metadata = {
   title: "GTP Trends COM",
@@ -21,7 +22,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }

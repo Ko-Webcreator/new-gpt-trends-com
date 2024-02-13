@@ -10,6 +10,7 @@ import BookmarkIcon from "@/components/icons/BookmarkIcon";
 import AboutIcon from "@/components/icons/AboutIcon";
 import HamburgerIcon from "@/components/icons/HamburgerIcon";
 import headerStyles from "./header.module.scss";
+import DrinkIcon from "../icons/DrinkIcon";
 
 const Header = () => {
   const [onMenu, setOnMenu] = useState(false);
@@ -24,7 +25,7 @@ const Header = () => {
         className={headerStyles.siteIcon}
       />
       <button className={headerStyles.toggleMenu} onClick={onClick}>
-        <HamburgerIcon />
+        {onMenu ? <DrinkIcon /> : <HamburgerIcon />}
       </button>
       <nav className={`${headerStyles.nav} ${onMenu ? headerStyles.on : ""}`}>
         <ul>

@@ -1,6 +1,7 @@
 import { Viewport } from "next";
 import "@/app/globals.scss";
 import Header from "@/components/page/Header";
+import layoutStyles from "./layout.module.scss";
 
 export const metadata = {
   title: "GTP Trends COM",
@@ -23,8 +24,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Header />
-        {children}
+        <main className={layoutStyles.wrap}>
+          <Header />
+          {children}
+        </main>
       </body>
     </html>
   );

@@ -57,13 +57,13 @@
 
 @keyframes fillAnimation {
   0% {
-    fill: var(--color-blue);
+    fill: var(--blue-color);
   }
   50% {
-    fill: var(--color-purple);
+    fill: var(--purple-color);
   }
   100% {
-    fill: var(--color-red);
+    fill: var(--red-color);
   }
 }
 
@@ -82,7 +82,7 @@
     position: absolute;
     left: 0;
     width: 100%;
-    background: var(--color-light-gray);
+    background: var(--light-gray-color);
     overflow: hidden;
     box-sizing: border-box;
     transition: 0.5s;
@@ -124,14 +124,14 @@
 
       span {
         display: block;
-        color: var(--color-black);
+        color: var(--black-color);
         font-size: get_vw(16);
       }
 
       svg {
         width: get_vw(30);
         height: get_vw(30);
-        fill: var(--color-black);
+        fill: var(--black-color);
       }
     }
 
@@ -141,7 +141,7 @@
       align-items: center;
       font-size: 20px;
       font-weight: 700;
-      color: var(--color-white);
+      color: var(--white-color);
     }
   }
 
@@ -150,11 +150,11 @@
     width: 235px;
     font-size: 20px;
     font-weight: 700;
-    color: var(--color-white);
+    color: var(--white-color);
     align-items: center;
     justify-content: center;
     height: 52px;
-    background: var(--color-blue);
+    background: var(--blue-color);
     border-radius: 100px;
     margin-top: 20px;
     box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);

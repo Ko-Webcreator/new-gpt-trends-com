@@ -92,6 +92,8 @@
 
     &.on {
       height: get_vw(480);
+      padding: get_vw(30) 0;
+      box-sizing: border-box;
     }
   }
 

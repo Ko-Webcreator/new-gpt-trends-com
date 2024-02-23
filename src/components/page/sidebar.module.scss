@@ -66,6 +66,12 @@
   @include mq-down(md) {
     padding: get_vw(20);
     margin-top: 0;
+    transition: 0.5s;
+    transform: translateY(get_vw(200));
+
+    &.on {
+      transform: translateY(0);
+    }
   }
 
   input {

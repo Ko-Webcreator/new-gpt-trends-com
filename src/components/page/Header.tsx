@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import HomeIcon from "@/components/icons/HomeIcon";
@@ -11,10 +11,28 @@ import AboutIcon from "@/components/icons/AboutIcon";
 import HamburgerIcon from "@/components/icons/HamburgerIcon";
 import headerStyles from "./header.module.scss";
 import DrinkIcon from "../icons/DrinkIcon";
+import { SP_WIDTH } from "@/const/size";
 
 const Header = () => {
   const [onMenu, setOnMenu] = useState(false);
   const onClick = () => setOnMenu((e) => !e);
+
+  // Window幅検知
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > SP_WIDTH) {
+        // SPサイズ以上はメニューを一旦非表示にする
+        setOnMenu(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <header className={headerStyles.header}>
       <Image

@@ -1,0 +1,11 @@
+@import "@/styles/index";
+
+.wrap {
+  font-size: 12px;
+  color: var(--footer-color);
+  text-align: center;
+
+  @include mq-down(md) {
+    font-size: get_vw(12);
+  }
+}

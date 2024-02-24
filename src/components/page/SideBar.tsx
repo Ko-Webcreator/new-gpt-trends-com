@@ -60,10 +60,12 @@ const SideBar = () => {
           </li>
         </ul>
       </div>
-      <div className={`${sidebar.search} ${isDisplaySearch ? sidebar.on : ""}`}>
+      <search
+        className={`${sidebar.search} ${isDisplaySearch ? sidebar.on : ""}`}
+      >
         <input type="text" />
         <button type="button">Search</button>
-      </div>
+      </search>
       <Footer className={sidebar.footer} />
     </aside>
   );

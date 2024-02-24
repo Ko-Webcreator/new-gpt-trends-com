@@ -59,12 +59,3 @@
     }
   }
 }
-
-.footer {
-  display: none;
-
-  @include mq-down(md) {
-    display: block;
-    padding: get_vw(20) 0 get_vw(150);
-  }
-}

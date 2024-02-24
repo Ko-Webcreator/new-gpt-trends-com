@@ -27,7 +27,6 @@ export default async function Page() {
         <h2>世界のトレンドをAIを使用して紹介してます</h2>
       </section>
       <Articles />
-      <Footer className={pageStyles.footer} />
     </main>
   );
 }

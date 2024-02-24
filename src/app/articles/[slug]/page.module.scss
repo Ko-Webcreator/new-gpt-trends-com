@@ -8,11 +8,22 @@
   font-size: 20px;
   font-weight: 600;
 
+  @include mq-down(md) {
+    height: get_vw(40);
+    padding: 0 get_vw(12);
+    gap: get_vw(16);
+    font-size: get_vw(20);
+  }
+
   a {
     display: flex;
     align-items: center;
     gap: 16px;
     color: var(--white-color);
+
+    @include mq-down(md) {
+      gap: get_vw(16);
+    }
   }
 
   svg {
@@ -25,14 +36,26 @@
   padding: 0 12px 30px;
   border-bottom: solid 1px var(--article-border-color);
 
+  @include mq-down(md) {
+    padding: 0 get_vw(12) get_vw(30);
+  }
+
   header {
     display: flex;
     gap: 16px;
     align-items: center;
 
+    @include mq-down(md) {
+      gap: get_vw(16);
+    }
+
     h2 {
       font-size: 20px;
       font-weight: 600;
+
+      @include mq-down(md) {
+        font-size: get_vw(20);
+      }
     }
   }
 
@@ -42,20 +65,38 @@
     font-weight: 600;
     padding-top: 5px;
     text-align: right;
+
+    @include mq-down(md) {
+      font-size: get_vw(14);
+      padding-top: get_vw(5);
+    }
   }
 
   hgroup {
     margin-top: 20px;
     line-height: 1.6;
 
+    @include mq-down(md) {
+      margin-top: get_vw(20);
+    }
+
     h1 {
       font-size: 20px;
       font-weight: 700;
+
+      @include mq-down(md) {
+        font-size: get_vw(20);
+      }
     }
 
     p {
       font-size: 16px;
       padding-top: 10px;
+
+      @include mq-down(md) {
+        font-size: get_vw(16);
+        padding-top: get_vw(10);
+      }
     }
 
     img {
@@ -64,6 +105,10 @@
       height: auto;
       margin: 20px auto 0;
       border-radius: 10px;
+
+      @include mq-down(md) {
+        margin: get_vw(20) auto 0;
+      }
     }
   }
 }

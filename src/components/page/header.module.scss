@@ -15,6 +15,11 @@
     width: 100%;
     justify-content: center;
     padding: 5px 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    background: var(--black-color);
   }
 }
 

@@ -8,7 +8,7 @@ type Props = {
 const ArrowIcon = ({ size = 30, fillColor = "white" }: Props) => {
   return (
     <svg
-      enable-background="new 0 0 156 156"
+      enableBackground="new 0 0 156 156"
       height={size}
       viewBox="0 0 156 156"
       width={size}

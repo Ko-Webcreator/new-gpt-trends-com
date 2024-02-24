@@ -25,11 +25,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <main className={layoutStyles.wrap}>
+        <div className={layoutStyles.wrap}>
           <Header />
           {children}
           <SideBar />
-        </main>
+        </div>
       </body>
     </html>
   );

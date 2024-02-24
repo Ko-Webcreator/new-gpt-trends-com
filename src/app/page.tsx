@@ -1,5 +1,6 @@
 import React from "react";
 import pageStyles from "./page.module.scss";
+import layoutStyles from "./layout.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 import { LineIcon, XIcon } from "react-share";
@@ -7,7 +8,7 @@ import { Footer } from "@/components/page/Footer";
 
 export default async function Page() {
   return (
-    <article className={pageStyles.wrap}>
+    <main className={layoutStyles.main}>
       <section className={pageStyles.head}>
         <Image
           src="/cover.png"
@@ -107,6 +108,6 @@ export default async function Page() {
         </li>
       </ul>
       <Footer className={pageStyles.footer} />
-    </article>
+    </main>
   );
 }

@@ -11,3 +11,14 @@
     flex-direction: column;
   }
 }
+
+.main {
+  width: 600px;
+  border-left: solid 1px var(--article-border-color);
+  border-right: solid 1px var(--article-border-color);
+  box-sizing: border-box;
+
+  @include mq-down(md) {
+    width: 100%;
+  }
+}

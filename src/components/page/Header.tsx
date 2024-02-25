@@ -84,7 +84,7 @@ const Header = () => {
             </button>
           </li>
         </ul>
-        <Link href="#" className={headerStyles.gptTrends}>
+        <Link href="/" className={headerStyles.gptTrends}>
           <span className={headerStyles.text}>GPT Trends</span>
           <span className={headerStyles.icon}>
             <AboutIcon />

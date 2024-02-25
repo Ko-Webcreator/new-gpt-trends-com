@@ -30,7 +30,7 @@ export const NotFound = () => {
       <section className={notfoundStyles.wrap}>
         <h3>Not Found &#x1fae2;</h3>
         <TypeAnimation
-          sequence={["Where am I? American Express?", 1000, "HaHa!!!", 10]}
+          sequence={["Where am I? American Express?", 3000, "HaHa!!!", 10]}
           wrapper="span"
         />
       </section>

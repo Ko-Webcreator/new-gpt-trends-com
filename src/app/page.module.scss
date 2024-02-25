@@ -21,6 +21,10 @@
     font-weight: 600;
     padding-top: 80px;
 
+    a {
+      color: var(--white-color);
+    }
+
     @include mq-down(md) {
       font-size: get_vw(24);
       padding-top: get_vw(60);

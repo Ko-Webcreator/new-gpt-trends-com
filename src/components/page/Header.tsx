@@ -35,13 +35,9 @@ const Header = () => {
 
   return (
     <header className={headerStyles.header}>
-      <Image
-        src="/siteIcon.png"
-        width={52}
-        height={52}
-        alt=""
-        className={headerStyles.siteIcon}
-      />
+      <Link href="/" className={headerStyles.siteIcon}>
+        <Image src="/siteIcon.png" width={52} height={52} alt="" />
+      </Link>
       <button className={headerStyles.toggleMenu} onClick={onClick}>
         {onMenu ? <DrinkIcon /> : <HamburgerIcon />}
       </button>

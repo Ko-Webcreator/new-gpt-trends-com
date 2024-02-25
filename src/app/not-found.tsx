@@ -5,6 +5,7 @@ import pageStyles from "./page.module.scss";
 import notfoundStyles from "./not-found.module.scss";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
+import Link from "next/link";
 
 export const NotFound = () => {
   return (
@@ -24,7 +25,9 @@ export const NotFound = () => {
           width={135}
           height={135}
         />
-        <h1>GPT Trends</h1>
+        <h1>
+          <Link href="/">GPT Trends</Link>
+        </h1>
         <h2>世界のトレンドをAIを使用して紹介してます</h2>
       </section>
       <section className={notfoundStyles.wrap}>

@@ -1,6 +1,6 @@
 import React from "react";
 import articlesStyles from "./articles.module.scss";
-import Article from "./article";
+import Article from "./Article";
 import { Footer } from "./Footer";
 
 const Articles = () => {

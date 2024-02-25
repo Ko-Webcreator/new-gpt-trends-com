@@ -1,0 +1,27 @@
+@import "@/styles/index";
+
+.wrap {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: solid 1px var(--article-border-color);
+  padding: 50px 0;
+  font-size: 16px;
+
+  @include mq-down(md) {
+    padding: get_vw(50) 0;
+    font-size: get_vw(16);
+  }
+
+  h3 {
+    font-size: 22px;
+    font-weight: 700;
+    padding-bottom: 40px;
+
+    @include mq-down(md) {
+      font-size: get_vw(22);
+      padding-bottom: get_vw(40);
+    }
+  }
+}

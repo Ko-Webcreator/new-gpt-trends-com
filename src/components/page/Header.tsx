@@ -44,7 +44,7 @@ const Header = () => {
       <nav className={`${headerStyles.nav} ${onMenu ? headerStyles.on : ""}`}>
         <ul>
           <li>
-            <Link href="#">
+            <Link href="/">
               <HomeIcon />
               <span>Home</span>
             </Link>

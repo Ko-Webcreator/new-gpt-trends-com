@@ -4,6 +4,7 @@ import Image from "next/image";
 import articleStyles from "./article.module.scss";
 import { FacebookIcon, LineIcon, XIcon } from "react-share";
 import { LinkType } from "@/types/linkType";
+import { formatterDate } from "@/libs/dayjs";
 
 type Props = {
   id: number;
@@ -22,7 +23,7 @@ const Article = async ({
   linkType,
   contentMaxLength = 0,
 }: Props) => {
-  const url = `${process.env.SITE_URL}/articles/${id}&text=${title}`;
+  const url = `${process.env.SITE_URL}/articles/${id}`;
 
   return (
     <article className={articleStyles.wrap}>
@@ -38,7 +39,7 @@ const Article = async ({
         </aside>
         <hgroup>
           <h1>
-            GPT Trends<time>{date}</time>
+            GPT Trends<time>{formatterDate(date)}</time>
           </h1>
           <h2 dangerouslySetInnerHTML={{ __html: title }} />
           <article
@@ -55,7 +56,7 @@ const Article = async ({
       <ul className={articleStyles.sns}>
         <li>
           <a
-            href={`https://twitter.com/share?url=${url}&hashtags=gptTrends`}
+            href={`https://twitter.com/share?url=${url}&text=${title}&hashtags=gptTrends`}
             target="_blank"
           >
             <XIcon size={40} round={true} />

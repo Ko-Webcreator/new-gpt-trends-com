@@ -43,7 +43,7 @@ export default function Page({ params }: { params: { slug: string } }) {
           </li>
         </ul>
       </article>
-      <Articles />
+      <Articles linkType="articles" contentMaxLength={30} />
     </main>
   );
 }

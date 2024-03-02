@@ -25,7 +25,7 @@ export default function Page({
         </Link>
       </div>
       <div className={pageStyles.articlesWrap}>
-        <Articles />
+        <Articles linkType="articles" />
       </div>
     </main>
   );

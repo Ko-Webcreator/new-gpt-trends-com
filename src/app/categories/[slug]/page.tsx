@@ -19,7 +19,7 @@ export default function Page({ params }: { params: { slug: string } }) {
         </Link>
       </div>
       <div className={pageStyles.articlesWrap}>
-        <Articles />
+        <Articles linkType="articles" />
       </div>
     </main>
   );

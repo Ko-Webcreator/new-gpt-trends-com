@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import sidebar from "./sidebar.module.scss";
 import { Footer } from "./Footer";

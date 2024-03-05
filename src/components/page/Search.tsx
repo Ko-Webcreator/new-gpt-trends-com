@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
 import searchStyles from "./search.module.scss";
 import { SP_WIDTH } from "@/const/size";

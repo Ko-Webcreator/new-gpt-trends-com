@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import sidebar from "./sidebar.module.scss";
 import { Footer } from "./Footer";
 import { SP_WIDTH } from "@/const/size";
+import Categories from "./Categories";
+import Search from "./Search";
 
 const SideBar = () => {
   const [isDisplaySearch, setDisplaySearch] = useState(true);
@@ -30,42 +32,8 @@ const SideBar = () => {
 
   return (
     <aside className={sidebar.wrap}>
-      <div className={sidebar.categories}>
-        <h3>Categories</h3>
-        <ul>
-          <li>
-            <a href="#">
-              <h4>カテゴリ名</h4>(<span>4</span>)
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <h4>カテゴリ名</h4>(<span>4</span>)
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <h4>カテゴリ名</h4>(<span>4</span>)
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <h4>カテゴリ名</h4>(<span>4</span>)
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <h4>カテゴリ名</h4>(<span>4</span>)
-            </a>
-          </li>
-        </ul>
-      </div>
-      <search
-        className={`${sidebar.search} ${isDisplaySearch ? sidebar.on : ""}`}
-      >
-        <input type="text" />
-        <button type="button">Search</button>
-      </search>
+      <Categories />
+      <Search isDisplaySearch={isDisplaySearch} />
       <Footer className={sidebar.footer} />
     </aside>
   );

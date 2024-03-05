@@ -1,25 +1,6 @@
 @import "@/styles/index";
 
 .wrap {
-  width: 350px;
-  padding-left: 40px;
-  box-sizing: border-box;
-
-  @include mq-down(xl) {
-    display: none;
-  }
-
-  @include mq-down(md) {
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 0;
-    position: fixed;
-    bottom: 0;
-  }
-}
-
-.search {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -68,13 +49,5 @@
       padding: get_vw(10) get_vw(15);
       margin-top: get_vw(20);
     }
-  }
-}
-
-.footer {
-  margin-top: 40px;
-
-  @include mq-down(md) {
-    display: none;
   }
 }

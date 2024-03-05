@@ -1,11 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import searchStyles from "./search.module.scss";
+import { SP_WIDTH } from "@/const/size";
 
-type Props = {
-  isDisplaySearch: boolean;
-};
+const Search = () => {
+  const [isDisplaySearch, setDisplaySearch] = useState(true);
 
-const Search = ({ isDisplaySearch }: Props) => {
+  // スクロール検知
+  useEffect(() => {
+    const handleScroll = () => {
+      // SP時のみ
+      if (window.innerWidth < SP_WIDTH) {
+        setDisplaySearch(false);
+      }
+    };
+
+    const handleScrollEnd = () => {
+      setDisplaySearch(true);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scrollend", handleScrollEnd);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scrollend", handleScrollEnd);
+    };
+  }, []);
+
   return (
     <search
       className={`${searchStyles.wrap} ${

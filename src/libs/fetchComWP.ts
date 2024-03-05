@@ -16,7 +16,7 @@ type Props = {
   body?: any;
 };
 
-export const fetchWP = async <T>({
+export const fetchComWP = async <T>({
   method,
   endpoint,
   body,

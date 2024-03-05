@@ -2,7 +2,7 @@ import React from "react";
 import articlesStyles from "./articles.module.scss";
 import Article from "./Article";
 import { Footer } from "./Footer";
-import { fetchWP } from "@/libs/fetchWp";
+import { fetchComWP } from "@/libs/fetchComWP";
 import { FetchType } from "@/types/fetchType";
 import { ArticleType } from "@/types/articleType";
 import { LinkType } from "@/types/linkType";
@@ -13,7 +13,7 @@ type Props = {
 };
 
 const Articles = async ({ linkType, contentMaxLength = 0 }: Props) => {
-  const data = await fetchWP<ArticleType>({
+  const data = await fetchComWP<ArticleType>({
     method: FetchType.Get,
     endpoint: `/posts?per_page=20&_fields=id,date,title,content,category_name,category_id`,
   });

@@ -1,44 +1,28 @@
 import React from "react";
 import categoriesStyles from "./categories.module.scss";
 import { fetchComWP } from "@/libs/fetchComWP";
-import { ArticleType } from "@/types/articleType";
 import { FetchType } from "@/types/fetchType";
+import { CategoryType } from "@/types/categoryType";
 
 const Categories = async () => {
-  const data = await fetchComWP<ArticleType>({
+  const data = await fetchComWP<CategoryType>({
     method: FetchType.Get,
-    endpoint: `/categories`,
+    endpoint: `/categories?_fields=id,count,name`,
   });
+
+  console.log(data);
 
   return (
     <div className={categoriesStyles.wrap}>
       <h3>Categories</h3>
       <ul>
-        <li>
-          <a href="#">
-            <h4>カテゴリ名</h4>(<span>4</span>)
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <h4>カテゴリ名</h4>(<span>4</span>)
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <h4>カテゴリ名</h4>(<span>4</span>)
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <h4>カテゴリ名</h4>(<span>4</span>)
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <h4>カテゴリ名</h4>(<span>4</span>)
-          </a>
-        </li>
+        {data.map((e) => (
+          <li key={e.id}>
+            <a href={`/categories/${e.id}`}>
+              <h4>{e.name}</h4>(<span>{e.count}</span>)
+            </a>
+          </li>
+        ))}
       </ul>
     </div>
   );

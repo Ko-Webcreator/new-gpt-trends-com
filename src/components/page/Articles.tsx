@@ -8,35 +8,36 @@ import { ArticleType } from "@/types/articleType";
 import { LinkType } from "@/types/linkType";
 
 type Props = {
-  linkType: LinkType;
-  contentMaxLength?: number;
+ linkType: LinkType;
+ count: number;
+ contentMaxLength?: number;
 };
 
-const Articles = async ({ linkType, contentMaxLength = 0 }: Props) => {
-  const data = await fetchComWP<ArticleType>({
-    method: FetchType.Get,
-    endpoint: `/posts?per_page=20&_fields=id,date,title,content,category_name,category_id`,
-  });
+const Articles = async ({ linkType, count, contentMaxLength = 0 }: Props) => {
+ const data = await fetchComWP<ArticleType[]>({
+  method: FetchType.Get,
+  endpoint: `/posts?per_page=${count}&_fields=id,date,title,content,category_name,category_id`,
+ });
 
-  return (
-    <>
-      <ul className={articlesStyles.articles}>
-        {data.map((e) => (
-          <li key={e.id}>
-            <Article
-              id={e.id}
-              date={e.date}
-              title={e.title.rendered}
-              content={e.content.rendered}
-              linkType={linkType}
-              contentMaxLength={contentMaxLength}
-            />
-          </li>
-        ))}
-      </ul>
-      <Footer className={articlesStyles.footer} />
-    </>
-  );
+ return (
+  <>
+   <ul className={articlesStyles.articles}>
+    {data.map((e) => (
+     <li key={e.id}>
+      <Article
+       id={e.id}
+       date={e.date}
+       title={e.title.rendered}
+       content={e.content.rendered}
+       linkType={linkType}
+       contentMaxLength={contentMaxLength}
+      />
+     </li>
+    ))}
+   </ul>
+   <Footer className={articlesStyles.footer} />
+  </>
+ );
 };
 
 export default Articles;

@@ -101,6 +101,10 @@
   top: get_vw(60);
   z-index: 100;
 
+  &.noTop {
+   top: get_vw(100);
+  }
+
   &.on {
    height: get_vw(480);
    padding: get_vw(30) 0;

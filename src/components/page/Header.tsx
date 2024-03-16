@@ -12,83 +12,91 @@ import HamburgerIcon from "@/components/icons/HamburgerIcon";
 import headerStyles from "./header.module.scss";
 import DrinkIcon from "../icons/DrinkIcon";
 import { SP_WIDTH } from "@/const/size";
+import { useSelectedLayoutSegment } from "next/navigation";
 
 const Header = () => {
-  const [onMenu, setOnMenu] = useState(false);
-  const onClick = () => setOnMenu((e) => !e);
+ const [onMenu, setOnMenu] = useState(false);
+ const segment = useSelectedLayoutSegment();
+ const onClick = () => setOnMenu((e) => !e);
 
-  // Window幅検知
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > SP_WIDTH) {
-        // SPサイズ以上はメニューを一旦非表示にする
-        setOnMenu(false);
-      }
-    };
+ console.log(segment);
 
-    window.addEventListener("resize", handleResize);
+ // Window幅検知
+ useEffect(() => {
+  const handleResize = () => {
+   if (window.innerWidth > SP_WIDTH) {
+    // SPサイズ以上はメニューを一旦非表示にする
+    setOnMenu(false);
+   }
+  };
 
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  window.addEventListener("resize", handleResize);
 
-  return (
-    <header className={headerStyles.header}>
-      <Link href="/" className={headerStyles.siteIcon}>
-        <Image src="/siteIcon.png" width={52} height={52} alt="" />
+  return () => {
+   window.removeEventListener("resize", handleResize);
+  };
+ }, []);
+
+ return (
+  <header className={headerStyles.header}>
+   <Link href="/" className={headerStyles.siteIcon}>
+    <Image src="/siteIcon.png" width={52} height={52} alt="" />
+   </Link>
+   <button className={headerStyles.toggleMenu} onClick={onClick}>
+    {onMenu ? <DrinkIcon /> : <HamburgerIcon />}
+   </button>
+   <nav
+    className={`${headerStyles.nav} ${segment ? headerStyles.noTop : ""} ${
+     onMenu ? headerStyles.on : ""
+    }`}
+   >
+    <ul>
+     <li>
+      <Link href="/">
+       <HomeIcon />
+       <span>Home</span>
       </Link>
-      <button className={headerStyles.toggleMenu} onClick={onClick}>
-        {onMenu ? <DrinkIcon /> : <HamburgerIcon />}
+     </li>
+     <li>
+      <Link href="#">
+       <JP width={30} />
+       <span>Japanese</span>
+      </Link>
+     </li>
+     <li>
+      <Link href="#">
+       <CN width={30} />
+       <span>Chinese</span>
+      </Link>
+     </li>
+     <li>
+      <Link href="#">
+       <FR width={30} />
+       <span>France</span>
+      </Link>
+     </li>
+     <li>
+      <Link href="#">
+       <CommentIcon />
+       <span>Comments</span>
+      </Link>
+     </li>
+     <li>
+      <button>
+       <BookmarkIcon />
+       <span>Bookmark</span>
       </button>
-      <nav className={`${headerStyles.nav} ${onMenu ? headerStyles.on : ""}`}>
-        <ul>
-          <li>
-            <Link href="/">
-              <HomeIcon />
-              <span>Home</span>
-            </Link>
-          </li>
-          <li>
-            <Link href="#">
-              <JP width={30} />
-              <span>Japanese</span>
-            </Link>
-          </li>
-          <li>
-            <Link href="#">
-              <CN width={30} />
-              <span>Chinese</span>
-            </Link>
-          </li>
-          <li>
-            <Link href="#">
-              <FR width={30} />
-              <span>France</span>
-            </Link>
-          </li>
-          <li>
-            <Link href="#">
-              <CommentIcon />
-              <span>Comments</span>
-            </Link>
-          </li>
-          <li>
-            <button>
-              <BookmarkIcon />
-              <span>Bookmark</span>
-            </button>
-          </li>
-        </ul>
-        <Link href="/" className={headerStyles.gptTrends}>
-          <span className={headerStyles.text}>GPT Trends</span>
-          <span className={headerStyles.icon}>
-            <AboutIcon />
-          </span>
-        </Link>
-      </nav>
-    </header>
-  );
+     </li>
+    </ul>
+    <Link href="/" className={headerStyles.gptTrends}>
+     <span className={headerStyles.text}>GPT Trends</span>
+     <span className={headerStyles.icon}>
+      <AboutIcon />
+     </span>
+    </Link>
+   </nav>
+  </header>
+ );
 };
 
 export default Header;

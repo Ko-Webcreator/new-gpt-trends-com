@@ -16,7 +16,7 @@
   display: flex;
   width: 100%;
   justify-content: center;
-  padding: 5px 0;
+  padding: get_vw(5) 0;
   top: 0;
   left: 0;
   z-index: 10;
@@ -98,7 +98,7 @@
   overflow: hidden;
   box-sizing: border-box;
   transition: 0.5s;
-  top: get_vw(100);
+  top: get_vw(60);
   z-index: 100;
 
   &.on {

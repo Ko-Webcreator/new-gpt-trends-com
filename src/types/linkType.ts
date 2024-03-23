@@ -1,1 +1,1 @@
-export type LinkType = "articles";
+export type LinkType = "articles" | "categories";

@@ -19,8 +19,6 @@ const Header = () => {
  const segment = useSelectedLayoutSegment();
  const onClick = () => setOnMenu((e) => !e);
 
- console.log(segment);
-
  // Window幅検知
  useEffect(() => {
   const handleResize = () => {

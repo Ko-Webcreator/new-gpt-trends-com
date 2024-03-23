@@ -25,7 +25,7 @@ export default async function Page() {
     <h1>GPT Trends</h1>
     <h2>世界のトレンドをAIを使用して紹介してます</h2>
    </section>
-   <Articles linkType="articles" count={20} contentMaxLength={200} />
+   <Articles linkType="articles" />
   </main>
  );
 }

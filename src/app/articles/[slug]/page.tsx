@@ -39,11 +39,13 @@ export async function generateMetadata({
 
 export default async function Page({ params }: { params: { slug: string } }) {
  const { slug } = params;
+ const articleId = Number(slug);
 
- const { date, title, content } = await fetchComWP<ArticleDetailType>({
-  method: FetchType.Get,
-  endpoint: `/posts/${slug}?_fields=date,title,content`,
- });
+ const { date, title, content, categories } =
+  await fetchComWP<ArticleDetailType>({
+   method: FetchType.Get,
+   endpoint: `/posts/${slug}?_fields=date,title,content,categories`,
+  });
 
  return (
   <main className={layoutStyles.main}>
@@ -73,7 +75,12 @@ export default async function Page({ params }: { params: { slug: string } }) {
      size={30}
     />
    </article>
-   <Articles linkType="articles" count={5} contentMaxLength={30} />
+   <Articles
+    linkType="categories"
+    excludeId={articleId}
+    categoryId={categories[0]}
+    count={5}
+   />
   </main>
  );
 }

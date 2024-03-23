@@ -11,7 +11,6 @@ type Props = {
  title: string;
  content: string;
  date: string;
- linkType: LinkType;
  contentMaxLength?: number;
 };
 
@@ -20,11 +19,8 @@ const Article = async ({
  title,
  content,
  date,
- linkType,
  contentMaxLength = 0,
 }: Props) => {
- const url = `${process.env.SITE_URL}/articles/${id}`;
-
  return (
   <article className={articleStyles.wrap}>
    <Link href={`/articles/${id}`}>

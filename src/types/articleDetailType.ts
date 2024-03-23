@@ -7,4 +7,5 @@ export type ArticleDetailType = {
  content: {
   rendered: string;
  };
+ categories: number[];
 };

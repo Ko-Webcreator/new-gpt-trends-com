@@ -69,12 +69,6 @@ const Header = () => {
      </li>
      <li>
       <Link href="#">
-       <FR width={30} />
-       <span>France</span>
-      </Link>
-     </li>
-     <li>
-      <Link href="#">
        <CommentIcon />
        <span>Comments</span>
       </Link>

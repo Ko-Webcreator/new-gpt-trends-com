@@ -12,6 +12,7 @@ type Props = {
  count?: number;
  excludeId?: number;
  categoryId?: number;
+ searchText?: string;
  contentMaxLength?: number;
 };
 
@@ -20,6 +21,7 @@ const Articles = async ({
  count = 30,
  excludeId = 0,
  categoryId,
+ searchText,
  contentMaxLength = 60,
 }: Props) => {
  let data: ArticleType[] = [];
@@ -34,6 +36,12 @@ const Articles = async ({
   data = await fetchComWP<ArticleType[]>({
    method: FetchType.Get,
    endpoint: `/posts?per_page=${count}&categories=${categoryId}&exclude=${excludeId}&_fields=id,date,title,content,category_name,category_id`,
+  });
+ }
+ if (linkType === "search") {
+  data = await fetchComWP<ArticleType[]>({
+   method: FetchType.Get,
+   endpoint: `/posts?per_page=${count}&search=${searchText}&exclude=${excludeId}&_fields=id,date,title,content,category_name,category_id`,
   });
  }
 

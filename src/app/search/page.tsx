@@ -6,27 +6,27 @@ import Articles from "@/components/page/Articles";
 import { notFound } from "next/navigation";
 
 export default function Page({
-  params,
-  searchParams,
+ params,
+ searchParams,
 }: {
-  params: { slug: string };
-  searchParams: { [key: string]: string | string[] | undefined };
+ params: { slug: string };
+ searchParams: { [key: string]: string | string[] | undefined };
 }) {
-  const { result } = searchParams;
+ const { p } = searchParams;
 
-  if (!result) notFound();
+ if (!p) notFound();
 
-  return (
-    <main className={layoutStyles.main}>
-      <div className={pageStyles.back}>
-        <Link href="/">
-          <ArrowIcon />
-          {result}
-        </Link>
-      </div>
-      <div className={pageStyles.articlesWrap}>
-        <Articles linkType="articles" />
-      </div>
-    </main>
-  );
+ return (
+  <main className={layoutStyles.main}>
+   <div className={pageStyles.back}>
+    <Link href="/">
+     <ArrowIcon />
+     {p}
+    </Link>
+   </div>
+   <div className={pageStyles.articlesWrap}>
+    <Articles linkType="search" searchText={p as string} />
+   </div>
+  </main>
+ );
 }
